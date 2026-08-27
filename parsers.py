@@ -4,7 +4,7 @@ from youtube_transcript_api import YouTubeTranscriptApi
 
 def extract_content(url: str) -> str:
     try:
-        if "youtube.com" in url:
+        if "youtube.com" in url or "youtu.be" in url:
             if "v=" in url:
                 video_id = url.split("v=")[1].split("&")[0]
             else:
@@ -12,3 +12,9 @@ def extract_content(url: str) -> str:
             
             transcript_list = YouTubeTranscriptApi.get_transcript(video_id)
             return " ".join(item['text'] for item in transcript_list)
+        
+        elif "github.com" in url and "blob" in url:
+            raw_url = url.replace("github.com", "raw.githubusercontent.com").replace("/blob/", "/")
+            response = requests.get(raw_url)
+            return response.text
+        
