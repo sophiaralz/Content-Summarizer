@@ -18,3 +18,13 @@ def extract_content(url: str) -> str:
             response = requests.get(raw_url)
             return response.text
         
+        else:
+            # uses the "User-Agent" header to trick the server into thinking the request is comiung from a standard web browser, 
+            # ensuring that the site actually responds
+            headers = {"User-Agent": "Modzilla/5.0"}
+            response = requests.get(url, headers=headers)
+            soup = BeautifulSoup(response.text, 'html.parser')
+            paragraphs = soup.find_all('p')
+            return " ".join([p.get_text() for p in paragraphs])
+        
+        
