@@ -10,8 +10,10 @@ def extract_content(url: str) -> str:
             else:
                 video_id = url.split("/")[-1]
             
-            transcript_list = YouTubeTranscriptApi.get_transcript(video_id)
-            return " ".join(item['text'] for item in transcript_list)
+            yt_api = YouTubeTranscriptApi()
+            transcript_list = yt_api.fetch(video_id)
+
+            return " ".join(item.text for item in transcript_list)
         
         elif "github.com" in url and "blob" in url:
             raw_url = url.replace("github.com", "raw.githubusercontent.com").replace("/blob/", "/")
@@ -28,7 +30,7 @@ def extract_content(url: str) -> str:
             return " ".join([p.get_text() for p in paragraphs])
         
     except Exception as e:
-        raise ValueError(f"could not extract text from URL: {e}")
+        raise ValueError(f"Could not extract text from URL: {e}")
 
         
         
