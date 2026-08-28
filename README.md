@@ -12,7 +12,7 @@ An intelligent web application that instantly converts URLs—from YouTube video
 
 ## Project Structure
 
-'''text
+```
 content_summarizer/
 │
 ├── backend.py       # FastAPI server and Gemini integration
@@ -20,7 +20,7 @@ content_summarizer/
 ├── parsers.py       # URL content extraction utilities
 ├── requirements.txt # Project dependencies
 └── .env             # Environment configuration (API keys)
-
+```
 ## Setup & Initialization
 
 1. Clone the Repository and Navigate to Directory
