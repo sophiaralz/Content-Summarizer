@@ -27,4 +27,8 @@ def extract_content(url: str) -> str:
             paragraphs = soup.find_all('p')
             return " ".join([p.get_text() for p in paragraphs])
         
+    except Exception as e:
+        raise ValueError("could not extract text from URL: {str(e)}")
+
+        
         
