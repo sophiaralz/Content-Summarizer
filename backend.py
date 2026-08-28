@@ -19,7 +19,7 @@ def summarize_content(request: SummarizeRequest):
     try:
         raw_text = extract_content(request.url)
 
-        prompt = f'''
+        prompt = f"""
         Analyze the following text and return clean Markdown with these exact sections. The titles of each section must have their own lines and be bigger than the rest:
         1. **Summary** (3-4 sentences overview)
         2. **Key Concepts and Insights** (Bullet points of deep takeaways)
@@ -27,7 +27,7 @@ def summarize_content(request: SummarizeRequest):
 
         Text to analyze:
         {raw_text[:12000]}
-        '''
+        """
 
         response = client.models.generate_content(
             model = 'gemini-3.6-flash',

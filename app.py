@@ -3,13 +3,13 @@ import requests
 
 st.set_page_config(page_title="AI Study Notes Generator", layout="centered")
 
-st.markdown('''
+st.markdown("""
             <style>
             h1 {
                 color: #9B111E !important;
             }
             </style>
-        ''', unsafe_allow_html=True)
+        """, unsafe_allow_html=True)
 
 st.title("AI Content Summarizer & Study Tool")
 st.write("Transform YouTube transcripts, articles, or GITHUB READMEs into structured study notes and flashcards")
