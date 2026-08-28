@@ -12,6 +12,7 @@ An intelligent web application that instantly converts URLs—from YouTube video
 
 ## Project Structure
 
+'''text
 content_summarizer/
 │
 ├── backend.py       # FastAPI server and Gemini integration
