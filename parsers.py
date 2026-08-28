@@ -28,7 +28,7 @@ def extract_content(url: str) -> str:
             return " ".join([p.get_text() for p in paragraphs])
         
     except Exception as e:
-        raise ValueError("could not extract text from URL: {str(e)}")
+        raise ValueError(f"could not extract text from URL: {e}")
 
         
         

@@ -20,22 +20,23 @@ def summarize_content(request: SummarizeRequest):
         raw_text = extract_content(request.url)
 
         prompt = f'''
-        Analyze the following text and return clean Markdown with these exact sections:
-        1. Executive Summary (3-4 sentences overview)
-        2. Key Concepts and Insights (Bullet points of deep takeaways)
-        3. Active Recall Flashcards (3-5 Question & Answer pairs)
+        Analyze the following text and return clean Markdown with these exact sections. The titles of each section must have their own lines and be bigger than the rest:
+        1. **Executive Summary** (3-4 sentences overview)
+        2. **Key Concepts and Insights** (Bullet points of deep takeaways)
+        3. **Active Recall Flashcards** (3-5 Question & Answer pairs)
 
         Text to analyze:
         {raw_text[:12000]}
         '''
 
         response = client.models.generate_content(
-            model = 'gemini_2.5-flash',
+            model = 'gemini-3.6-flash',
             contents = prompt,
         )
 
-        return {"notes" : response.txt}
+        return {"notes" : response.text}
     
     except Exception as e:
+        print(f"Debug Error: {e}")
         raise HTTPException(status_code = 400, detail = str(e))
 
