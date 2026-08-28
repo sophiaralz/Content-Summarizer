@@ -1,1 +1,1 @@
-# Content-Summarizer
+# Content-Summarizer - An AI study tool
