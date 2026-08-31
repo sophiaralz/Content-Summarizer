@@ -12,7 +12,7 @@ st.markdown("""
         """, unsafe_allow_html=True)
 
 st.title("AI Content Summarizer & Study Tool")
-st.write("Transform YouTube transcripts, articles, or GITHUB READMEs into structured study notes and flashcards")
+st.write("Transform YouTube videos, web pages, or GITHUB READMEs into structured study notes")
 
 # user text input
 url_input = st.text_input("Paste a URL (YouTube, Article, or GitHub README):")
