@@ -10,7 +10,7 @@ An intelligent web application that instantly converts URLs, from YouTube videos
 
 1. Multi-Format Content Parsing: Automatically pulls clean text from YouTube videos, web articles, and documentation pages
 2. Structured AI Summarization: Leverages the Gemini API and prompt engineering to break text down into a concise Summary, Key Concepts, and Active Recall Flashcards (with Questions and Answers)
-3. FastAPI Backend: A robust asynchronous API handling parsing requests and communicating with Google's generative AI models
+3. FastAPI Backend: A robust asynchronous API handling parsing requests and communicating with Google's gemini-3.6-flash model
 4. Streamlit Frontend: An interactive, clean user interface designed for quick studying and note generation
   
 ## Project Structure
@@ -45,9 +45,34 @@ Streamlit renders the generated output and success message in the browser
 ## Setup & Initialization
 
 1. Clone the Repository and Navigate to Directory
+```
 git clone <repository-url>
 cd content_summarizer
-
+```
 2. Create and Activate a Virtual Environment
+```
 python -m venv venv
 source venv/bin/activate
+```
+3. Install Dependencies
+```
+pip install -r requirements.txt
+```
+4. Configure Environment Variables
+   Create a .env file in the root directory and add your Google Gemini API key:
+   ```
+   GEMINI_API_KEY=your_actual_api_key_here
+   ```
+
+### Running the Application
+This project requires running both the FastAPI backend and Streamlit frontend concurrently in separate terminal windows
+
+1. Start the FastAPI backend
+```
+uvicorn backend:app -- reload
+```
+2. Start the Streamlit frontend (in a separate terminal)
+```
+streamlit run app.py
+```
+3. Open your browser and navigate to http://localhost:8501 to start summarizing content and generate study notes
