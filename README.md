@@ -4,7 +4,7 @@ An intelligent web application that instantly converts URLs, from YouTube videos
 
 ## Demo
 
-<video src="./recording.mp4" controls width="100%"></video>
+[Watch the Demo Video](./recording.mp4)
 
 ## Features
 
