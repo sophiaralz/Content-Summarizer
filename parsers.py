@@ -21,8 +21,7 @@ def extract_content(url: str) -> str:
             return response.text
         
         else:
-            # uses the "User-Agent" header to trick the server into thinking the request is comiung from a standard web browser, 
-            # ensuring that the site actually responds
+            # uses the "User-Agent" header to trick the server into thinking the request is coming from a standard web browser, ensuring that the site actually responds
             headers = {"User-Agent": "Modzilla/5.0"}
             response = requests.get(url, headers=headers)
             soup = BeautifulSoup(response.text, 'html.parser')
