@@ -15,7 +15,7 @@ st.title("AI Content Summarizer & Study Tool")
 st.write("Transform YouTube videos, web pages, or GITHUB READMEs into structured study notes")
 
 # user text input
-url_input = st.text_input("Paste a URL (YouTube, Article, or GitHub README):")
+url_input = st.text_input("Paste a URL (YouTube, Web Page, or GitHub README):")
 
 if st.button("Generate Study Notes", type = "primary"):
     if not url_input:
