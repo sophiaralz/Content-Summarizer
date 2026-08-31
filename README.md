@@ -4,7 +4,7 @@ An intelligent web application that instantly converts URLs, from YouTube videos
 
 ## Demo
 
-coming soon...
+<video src="https://raw.githubusercontent.com/SophiaRaldugina-Zhu/Content-Summarizer/main/recording.mp4" controls width="100%"></video>
 
 ## Features
 
