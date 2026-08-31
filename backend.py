@@ -23,7 +23,8 @@ def summarize_content(request: SummarizeRequest):
         Analyze the following text and return clean Markdown with these exact sections. The titles of each section must have their own lines and be bigger than the rest:
         1. **Summary** (3-4 sentences overview)
         2. **Key Concepts and Insights** (Bullet points of deep takeaways)
-        3. **Active Recall Flashcards** (3-5 Question & Answer pairs. Answers should be in a new line)
+        3. **Active Recall Flashcards** (3-5 Question & Answer pairs. Questions start with 'Q question number: '.
+        Answers should be in a NEW line (different from questions) and start with 'A: ')
 
         Text to analyze:
         {raw_text[:12000]}
